@@ -1,0 +1,31 @@
+<div class="journal-container">
+    <h1>Journal Entry</h1>
+    <!-- <form [formGroup]="journalForm" (ngSubmit)="onSubmit()"> -->
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="sleepTime">Previous Night's Sleep Time</label>
+        <input type="time" id="sleepTime" formControlName="sleepTime" required>
+      </div>
+      <div class="form-group">
+        <label for="wakeUpTime">Wake Up Time</label>
+        <input type="time" id="wakeUpTime" formControlName="wakeUpTime" required>
+      </div>
+      <div class="form-group">
+        <label for="toDoList">To-Do List</label>
+        <textarea id="toDoList" formControlName="toDoList" rows="3" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="percentAccomplished">Percent Accomplished</label>
+        <input type="number" id="percentAccomplished" formControlName="percentAccomplished" min="0" max="100" required>
+      </div>
+      <div class="form-group">
+        <label for="ambitionLevel">Ambition Level</label>
+        <input type="range" id="ambitionLevel" formControlName="ambitionLevel" min="0" max="10" required>
+      </div>
+      <div class="form-group">
+        <label for="notableEvent">Most Notable Event of the Day</label>
+        <textarea id="notableEvent" formControlName="notableEvent" rows="3" required></textarea>
+      </div>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </div>

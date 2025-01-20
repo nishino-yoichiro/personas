@@ -1,10 +1,14 @@
-// filepath: /c:/Users/yoich/Documents/CS_Projects/personas/personas-frontend/src/app/app-routing.module.ts
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { JournalComponent } from './journal/journal.component';
+import { DataComponent } from './data/data.component'; // Import DataComponent
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'journal', component: JournalComponent },
+  { path: 'data', component: DataComponent }, // Add route for DataComponent
+  // Add other routes here
 ];
 
 @NgModule({

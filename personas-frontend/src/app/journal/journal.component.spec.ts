@@ -8,7 +8,7 @@ describe('JournalComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [JournalComponent]
+      imports: [JournalComponent],
     })
     .compileComponents();
 

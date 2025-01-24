@@ -33,7 +33,7 @@ export class JournalComponent implements OnInit {
         response => {
           console.log('Journal Entry saved:', response);
           // Handle successful save, e.g., reset form or show a success message
-        },
+        }, 
         error => {
           console.error('Error saving journal entry:', error);
           // Handle error, e.g., show an error message

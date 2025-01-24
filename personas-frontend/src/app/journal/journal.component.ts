@@ -27,7 +27,7 @@ export class JournalComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onSubmit() {
+  onSubmit() { 
     if (this.journalForm.valid) {
       this.journalService.createJournalEntry(this.journalForm.value).subscribe(
         response => {

@@ -9,4 +9,5 @@ router.register(r'personas', views.PersonaViewSet, basename='persona')
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('journal-data/', views.journal_data, name='journal-data'),
 ]

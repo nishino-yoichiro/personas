@@ -4,12 +4,13 @@ import { routes } from './app-routing.module';
 import { provideHttpClient } from '@angular/common/http';
 import { importProvidersFrom } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideHttpClient(),
-    importProvidersFrom(ReactiveFormsModule, FormsModule)
+    importProvidersFrom(ReactiveFormsModule, FormsModule, CommonModule)
   ]
 };

@@ -8,6 +8,7 @@ class PersonaSerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'description', 'image_url']
 
 class DailyEntrySerializer(serializers.ModelSerializer):
+    
     sleep_duration = serializers.FloatField(read_only=True)  # Automatically calculated
     
     class Meta:

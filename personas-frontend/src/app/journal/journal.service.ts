@@ -23,6 +23,10 @@ export class JournalService {
   constructor(private http: HttpClient) {}
 
   createJournalEntry(entry: JournalEntry): Observable<JournalEntry> {
+    console.log('Creating journal entry:', entry);
     return this.http.post<JournalEntry>(this.apiUrl, entry);
+  }
+  getJournalEntries(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
   }
 }

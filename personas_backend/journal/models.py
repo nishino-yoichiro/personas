@@ -11,7 +11,7 @@ class Persona(models.Model):
         return self.name
 
 class DailyEntry(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    # user = models.ForeignKey(User, on_delete=models.CASCADE)
     entry_date = models.DateField()
     persona = models.ForeignKey(Persona, on_delete=models.SET_NULL, null=True)
     
@@ -36,7 +36,7 @@ class DailyEntry(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        unique_together = ['user', 'entry_date']
+        # unique_together = ['user', 'entry_date']
         ordering = ['-entry_date']  # Most recent entries first
 
     def __str__(self):

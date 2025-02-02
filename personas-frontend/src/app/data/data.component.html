@@ -1,5 +1,29 @@
 <div class="data-container">
-    <h1>Data Dashboard</h1>
-    <p>Welcome to the data dashboard. Here you can view various statistics and data visualizations.</p>
-    <!-- Add more content and data visualizations here -->
-  </div>
+  <h1>Journal Entries</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Event</th>
+        <th>To-do list</th>
+        <th>To-do list completion rate</th>
+        <th>Sleep time</th>
+        <th>Wake time</th>
+        <th>Score</th>
+        <th>What was good today</th>
+        <th>What could we have done better or Strategic changes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let entry of journalEntries">
+        <td>{{ entry.Event }}</td>
+        <td>{{ entry['To-do list'] }}</td>
+        <td>{{ entry['To-do list completion rate'] }}</td>
+        <td>{{ entry['Sleep time'] }}</td>
+        <td>{{ entry['Wake time'] }}</td>
+        <td>{{ entry.Score }}</td>
+        <td>{{ entry['What was good today'] }}</td>
+        <td>{{ entry['What could we have done better or Strategic changes'] }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

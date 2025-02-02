@@ -1,11 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DataService } from './data.service';  // Adjust the import path as necessary
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-data',
-  imports: [],
   templateUrl: './data.component.html',
-  styleUrl: './data.component.css'
+  styleUrls: ['./data.component.css'],
+  imports: [CommonModule],
 })
-export class DataComponent {
+export class DataComponent implements OnInit {
+  journalEntries: any[] = [];  // Add this property
 
+  constructor(private dataService: DataService) {}
+
+  ngOnInit(): void {
+    this.dataService.getJournalEntries().subscribe(data => {
+        this.journalEntries = data;
+        console.log(this.journalEntries);  // Log the data to the console
+      }, error => {
+        console.error('Error fetching journal entries:', error);
+      }
+    );
+  }
 }

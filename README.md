@@ -5,7 +5,7 @@ Personas Project
 
 Variation of a journaling program.
 
-Input metrics like hours contributed to certain tasks, time slept, time woken up
+Input metrics like hours contributed to certain tasks, time slept, time woken up, percentage of goals completed, etc.
 
 Input daily activities
 

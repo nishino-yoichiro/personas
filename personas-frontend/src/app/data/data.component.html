@@ -1,5 +1,19 @@
 <div class="data-container">
+  <button class="back-button" (click)="goBack()">Back</button>
   <h1>Journal Entries</h1>
+  <div class="sort-controls">
+    <label for="sortMetric">Sort by:</label>
+    <select id="sortMetric" (change)="sortBy($event)">
+      <option value="Event">Event</option>
+      <option value="To-do list completion rate">Completion Rate</option>
+      <option value="Sleep time">Sleep Time</option>
+      <option value="Wake time">Wake Time</option>
+      <option value="Score">Score</option>
+    </select>
+    <button (click)="sortBy(currentMetric)">
+      <span [ngClass]="{'arrow-up': sortOrder, 'arrow-down': !sortOrder}"></span>
+    </button>
+  </div>
   <table>
     <thead>
       <tr>
@@ -15,14 +29,14 @@
     </thead>
     <tbody>
       <tr *ngFor="let entry of journalEntries">
-        <td>{{ entry.Event }}</td>
-        <td>{{ entry['To-do list'] }}</td>
-        <td>{{ entry['To-do list completion rate'] }}</td>
-        <td>{{ entry['Sleep time'] }}</td>
-        <td>{{ entry['Wake time'] }}</td>
-        <td>{{ entry.Score }}</td>
-        <td>{{ entry['What was good today'] }}</td>
-        <td>{{ entry['What could we have done better or Strategic changes'] }}</td>
+        <td [ngClass]="{'blank': !entry.Event}">{{ entry.Event || '' }}</td>
+        <td [ngClass]="{'blank': !entry['To-do list']}">{{ entry['To-do list'] || '' }}</td>
+        <td [ngClass]="{'blank': !entry['To-do list completion rate']}">{{ entry['To-do list completion rate'] || '' }}</td>
+        <td [ngClass]="{'blank': !entry['Sleep time']}">{{ entry['Sleep time'] || '' }}</td>
+        <td [ngClass]="{'blank': !entry['Wake time']}">{{ entry['Wake time'] || '' }}</td>
+        <td [ngClass]="{'blank': !entry.Score}">{{ entry.Score || '' }}</td>
+        <td [ngClass]="{'blank': !entry['What was good today']}">{{ entry['What was good today'] || '' }}</td>
+        <td [ngClass]="{'blank': !entry['What could we have done better or Strategic changes']}">{{ entry['What could we have done better or Strategic changes'] || '' }}</td>
       </tr>
     </tbody>
   </table>

@@ -13,4 +13,8 @@ export class DataService {
   getJournalEntries(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }
+
+  submitJournalEntry(entry: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl, entry);
+  }
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { JournalService } from './journal.service';
+import { Router } from '@angular/router';
+import { DataService } from '../data/data.service';
 
 @Component({
   selector: 'app-journal',
@@ -12,7 +14,7 @@ import { JournalService } from './journal.service';
 export class JournalComponent implements OnInit {
   journalForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private journalService: JournalService) {
+  constructor(private fb: FormBuilder, private journalService: JournalService, private router: Router, private dataService: DataService) {
     this.journalForm = this.fb.group({
       entry_date: ['', Validators.required],
       persona: [null],  // Assuming persona is optional and referenced by ID
@@ -31,6 +33,7 @@ export class JournalComponent implements OnInit {
       this.journalService.createJournalEntry(this.journalForm.value).subscribe(
         response => {
           console.log('Journal Entry saved:', response);
+          this.router.navigate(['/home']);
           // Handle successful save, e.g., reset form or show a success message
         }, 
         error => {

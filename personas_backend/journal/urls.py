@@ -10,4 +10,6 @@ router.register(r'personas', views.PersonaViewSet, basename='persona')
 urlpatterns = [
     path('', include(router.urls)),
     path('journal-data/', views.journal_data, name='journal-data'),
+    path('classify-persona/', views.classify_persona_view, name='classify-persona'),
+    path('most-recent-journal-entry/', views.most_recent_journal_entry, name='most-recent-journal-entry'),
 ]

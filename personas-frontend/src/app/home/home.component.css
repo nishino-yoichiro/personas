@@ -143,3 +143,27 @@ body, html {
   border-radius: 10px;
   margin-bottom: 10px;
 }
+
+.carousel-container {
+  margin-top: 20px;
+}
+
+.carousel-item {
+  text-align: center;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.carousel-item h3 {
+  margin-top: 10px;
+  font-size: 1.5em;
+}
+
+.carousel-item p {
+  font-size: 1em;
+  color: #666;
+}

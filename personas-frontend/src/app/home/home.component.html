@@ -25,4 +25,17 @@
       <p>{{ personaDescription }}</p>
     </div>
   </div>
+  <div class="carousel-container">
+    <owl-carousel-o [options]="customOptions">
+      <ng-container *ngFor="let persona of personas">
+        <ng-template carouselSlide>
+          <div class="carousel-item">
+            <img [src]="persona.image" alt="{{ persona.name }}">
+            <h3>{{ persona.name }}</h3>
+            <p>{{ persona.description }}</p>
+          </div>
+        </ng-template>
+      </ng-container>
+    </owl-carousel-o>
+  </div>
 </div>

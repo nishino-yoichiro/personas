@@ -4,7 +4,10 @@ import { DataComponent } from './data/data.component';
 import { HomeComponent } from './home/home.component';
 import { JournalComponent } from './journal/journal.component';
 import { ReactiveFormsModule } from '@angular/forms';
-// Import other components as necessary
+import { CarouselModule } from 'ngx-owl-carousel-o';  // Import CarouselModule
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -15,7 +18,17 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), ReactiveFormsModule],
+  declarations: [
+  ],
+  imports: [
+    RouterModule.forRoot(routes),
+    ReactiveFormsModule,
+    CarouselModule,
+    CommonModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    JournalComponent  // Import JournalComponent here
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
